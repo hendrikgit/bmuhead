@@ -7,3 +7,7 @@ A bash loop that does the same ;)
 ```bash
 for f in *.bmu; do [ ! "$(sed -n '/^BMU V1.0/p;q' "$f")" ] && echo -n "BMU V1.0" | cat - $f > $f.bmuheader && mv $f.bmuheader $f; done
 ```
+or with the sponge utility (from package `moreutils` in Debian and Ubuntu)
+```bash
+for f in *.bmu; do [ ! "$(sed -n '/^BMU V1.0/p;q' "$f")" ] && echo -n "BMU V1.0" | cat - $f | sponge $f; done
+```
