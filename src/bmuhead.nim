@@ -4,6 +4,7 @@ const
   bmuHeader = "BMU V1.0"
   fileExtensions = [".bmu", ".wav"]
   usage = &"""
+(Version: {getEnv("VERSION")})
 Provide one or more filenames as parameters.
 The text "{bmuHeader}" will be added to the beginning of each file.
 If the file already starts like that nothing will be done.
